@@ -12,8 +12,10 @@ This is a starter template with CodeIgniter 3.1.x and database migration & seedi
 
 ### Installation
 1. Clone this repository
-2. Configure **application/config/config.php**.
-3. Configure **application/config/database.php**.
+``git clone https://github.com/aaron5670/CodeIgniter-3-Database-Migration-and-Seeding.git``
+2. Install all required packages with Composer with your CLI: ``composer install``.
+3. Configure **application/config/config.php**.
+4. Configure **application/config/database.php**.
 
 
 ### CLI Commands
