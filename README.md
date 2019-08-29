@@ -25,3 +25,12 @@ This is a starter template with CodeIgniter 3.1.x and database migration & seedi
 | php index.php tools migrate ["version_number"]                  | Run all migrations. The version number is optional. |
 | php index.php tools seeder "file_name"                          | Creates a new seed file.                            |
 | php index.php tools seed "file_name"                            | Run the specified seed file.                        |
+
+### Example
+In **application/database/migrations** is a migrations file and in **application/database/seeds** is a seeder file created for this example.
+
+Type the following commands in your CLI:
+1. ``php index.php tools migrate BrandSeeder``
+2. ``php index.php tools migrate``
+3. ``php index.php tools seed BrandsSeeder``
+4. Check your database changes :)
