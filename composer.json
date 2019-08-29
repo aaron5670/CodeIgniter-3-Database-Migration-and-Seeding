@@ -5,7 +5,7 @@
 	"homepage": "https://aaronvandenberg.nl",
 	"license": "MIT",
 	"support": {
-		"source": "#"
+		"source": "https://github.com/aaron5670/CodeIgniter-3-Database-Migration-and-Seeding"
 	},
 	"require": {
 		"php": ">=5.3.7",
