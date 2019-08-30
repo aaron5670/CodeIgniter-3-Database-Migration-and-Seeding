@@ -1,13 +1,14 @@
 <?php
-//Required for seeding
-//ToDo: Find a better solution to fix the "Class 'Seeder' not found" bug
-$root = realpath($_SERVER["DOCUMENT_ROOT"]);
-require_once ("$root\application\database\Seeder.php");
 
 class Tools extends CI_Controller {
 
+	public $seeder;
+
 	public function __construct() {
 		parent::__construct();
+
+		$this->load->library('database/seeder');
+		$this->seeder =  new Seeder();
 
 		// can only be called from the command line
 		if (!$this->input->is_cli_request()) {
@@ -63,9 +64,8 @@ class Tools extends CI_Controller {
 	}
 
 	public function seed($name) {
-		$seeder = new Seeder();
 
-		$seeder->call($name);
+		$this->seeder->call($name);
 	}
 
 	protected function make_migration_file($name) {
