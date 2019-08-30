@@ -1,6 +1,9 @@
 # CodeIgniter 3 with Database Migration & Seeding
 ## About
-This is a starter template with CodeIgniter 3.1.x and database migration & seeding tools.
+This is a starter template with CodeIgniter 3.1.x and database migration
+& seeding tools. In this branch I will integrate Symfony Console
+Component for pretty and user friendly database migration and seeding
+commands.
 
 ### Features
 - [x] CodeIgniter Migration with CodeIgniter Command Line Interface (CLI)
@@ -8,7 +11,13 @@ This is a starter template with CodeIgniter 3.1.x and database migration & seedi
 - [x] [Faker PHP Library](https://github.com/fzaninotto/Faker)
 
 ### ToDo
-- [ ] Pretty CLI commands
+- [x] Integrate Symfony Console Component
+- [ ] Pretty CLI commands with Symfony Console
+
+#### Symfony Console Commands examples
+``php app migrate users``
+
+``php app migrate users --option``
 
 ### Installation
 1. Clone this repository
