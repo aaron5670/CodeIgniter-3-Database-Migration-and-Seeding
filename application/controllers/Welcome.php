@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+use Symfony\Component\Console\Application;
 
 class Welcome extends CI_Controller {
 
@@ -19,12 +20,13 @@ class Welcome extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index() {
+		$application = new Application();
+		$application->add(new GenerateAdminCommand());
+
 		$this->load->view('welcome_message');
 	}
 
 	public function test() {
-		echo '<pre>';
-		print_r(dirname(__FILE__));
-		echo '</pre>';
+
 	}
 }

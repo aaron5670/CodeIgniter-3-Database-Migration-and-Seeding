@@ -9,7 +9,8 @@
 	},
 	"require": {
 		"php": ">=5.3.7",
-		"fzaninotto/faker": "^1.8"
+		"fzaninotto/faker": "^1.8",
+		"symfony/console": "^4.3"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
@@ -17,5 +18,8 @@
 	"require-dev": {
 		"mikey179/vfsStream": "1.1.*",
 		"phpunit/phpunit": "4.* || 5.*"
+	},
+	"autoload": {
+		"classmap": ["Commands"]
 	}
 }
