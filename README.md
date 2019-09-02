@@ -25,9 +25,10 @@ commands.
 ### Installation
 1. Clone this repository
 ``git clone https://github.com/aaron5670/CodeIgniter-3-Database-Migration-and-Seeding.git``
-2. Install all required packages with Composer with your CLI: ``composer install``.
-3. Configure **application/config/config.php**.
-4. Configure **application/config/database.php**.
+2. In your command promt: ``$composer install``.
+3. In your command promt: ``$composer update``.
+4. Configure **application/config/config.php**.
+5. Configure **application/config/database.php**.
 
 
 ### CLI Commands
