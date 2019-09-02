@@ -14,10 +14,13 @@ commands.
 - [x] Integrate Symfony Console Component
 - [ ] Pretty CLI commands with Symfony Console
 
-#### Symfony Console Commands examples
-``php app migrate users``
+#### New working database migration & seeding commands
+- [x] Create a migration file with this pretty command: ``php app
+      migrate users``
+- [ ] Run all migrations: ``php app migration``
+- [ ] Creates a new seed file: ``php app seeder file_name``
+- [ ] Run the specified seed file: ``php app seed file_name``
 
-``php app migrate users --option``
 
 ### Installation
 1. Clone this repository
