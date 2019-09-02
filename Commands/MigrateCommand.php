@@ -1,5 +1,5 @@
 <?php
-
+//ToDo: read this tutorial -> https://codeinphp.github.io/post/creating-your-own-artisan-in-php/
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -38,6 +38,7 @@ class MigrateCommand extends Command {
 
 		if ($fileName) {
 			//ToDo: creating migration file
+			$this->create_migrationFile($fileName);
 			$result = '<question>Migration file ' . $fileName . ' is created..</question>';
 		}
 
@@ -47,4 +48,42 @@ class MigrateCommand extends Command {
 
 		$output->writeln($result);
 	}
+
+	private function create_migrationFile($fileName) {
+		$date = new DateTime();
+		$timestamp = $date->format('YmdHis');
+
+		$tableName = strtolower($fileName);
+		$migrationFile = $_SERVER['DOCUMENT_ROOT'] . 'application/database/migrations/' . $timestamp . '_' . $fileName . '.php';
+
+		$migration = fopen($migrationFile, "w") or die("Unable to create migration file!");
+
+		//ToDo: find a better and cleaner way to do this..
+		$migrationTable = <<< EOT
+<?php
+
+class Migration_$fileName extends CI_Migration {
+
+	public function up() {
+		\$this->dbforge->add_field(array(
+			'id' => array(
+				'type' => 'INT',
+				'constraint' => 11,
+				'auto_increment' => TRUE
+			)
+		));
+		\$this->dbforge->add_key('id', TRUE);
+		\$this->dbforge->create_table('$tableName');
+	}
+
+	public function down() {
+		\$this->dbforge->drop_table('$tableName');
+	}
+
+}
+EOT;
+		fwrite($migration, $migrationTable);
+		fclose($migration);
+	}
+
 }
